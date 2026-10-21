@@ -1,0 +1,4 @@
+Coloque aqui os prints das paginas iniciais:
+  qmassa-home.jpg   (site Q'Massa)
+  aquarela-home.jpg (site Pousada Aquarela)
+Proporcao ideal 16:10 (ex.: 1280x800). Sem os arquivos, o site mostra um cartao com gradiente.

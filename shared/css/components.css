@@ -1,0 +1,62 @@
+/* Componentes reutilizáveis */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;
+  font:700 .95rem var(--sans);border:1.5px solid var(--accent);cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;min-height:48px}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%)}
+.btn-primary:hover::after{transform:translateX(120%);transition:transform .7s}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--text)}
+.btn-ghost:hover{background:var(--text);color:var(--bg)}
+.btn-wa{background:#128c4a;border-color:#128c4a;color:#fff}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.icon-btn{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--text);
+  cursor:pointer;font-size:1.05rem;display:grid;place-items:center;transition:border-color .2s,transform .2s}
+.icon-btn:hover{border-color:var(--accent);transform:rotate(12deg)}
+/* especificidade maior: garante que o botão de menu suma no desktop */
+.icon-btn.menu-btn{display:grid}
+@media(min-width:820px){.icon-btn.menu-btn{display:none}}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:none;color:var(--muted);padding:0 12px;height:40px;font:700 .8rem var(--sans);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:box-shadow .25s,border-color .25s,transform .2s}
+.card:hover{box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 50%,var(--line))}
+.card p{color:var(--muted);font-size:.96rem;margin:8px 0 0}
+.card.tilt{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px))}
+.card.tilt:hover{--ty:-6px}
+.grid{display:grid;gap:20px;margin-top:32px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tags span{font-size:.76rem;font-weight:600;border:1px solid var(--line);background:var(--gold-soft);border-radius:999px;padding:3px 11px;color:var(--accent-text)}
+.badge{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.35rem;background:var(--gold-soft);margin-bottom:14px}
+.badge.teal{background:var(--teal-soft)}
+.ticks{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:6px}
+.ticks li{position:relative;padding-left:24px;color:var(--muted);font-size:.93rem}
+
+.badge svg{width:24px;height:24px;fill:none;stroke:var(--accent-text);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.badge.teal svg{stroke:var(--teal)}
+
+/* Cartão de projeto com print do site (usado em Início e Projetos) */
+.project{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.shot{position:relative;margin:0;min-height:120px;overflow:hidden;background:#1b140c;color:#fff;font:600 1.6rem var(--serif)}
+.shot.s1{background:linear-gradient(135deg,#7a4a0a,#1b140c)}.shot.s2{background:linear-gradient(135deg,#3f7d78,#1d4440)}
+.shot .frame{position:relative;z-index:2;height:22px;background:rgba(20,18,15,.88);display:flex;align-items:center;gap:5px;padding:0 10px}
+.shot .frame i{width:8px;height:8px;border-radius:50%;background:#ff5f57}.shot .frame i:nth-child(2){background:#febc2e}.shot .frame i:nth-child(3){background:#28c840}
+.shot-name{position:absolute;inset:22px 0 0;display:grid;place-items:center;z-index:0}
+/* proporção natural do print: nunca estica nem deforma */
+.shot img{position:relative;z-index:1;display:block;width:100%;height:auto;aspect-ratio:1280/582;object-fit:cover;object-position:top;transition:transform .7s}
+.project:hover .shot img{transform:scale(1.04)}
+.shot img.hidden{display:none}
+.pbody{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.pbody p{margin:0;color:var(--muted);font-size:.96rem}
+.pbody .btn{margin-top:auto;align-self:flex-start;padding:10px 22px}
+
+/* ===== Marcadores minimalistas (numeração tipográfica no lugar de ícones/emojis) ===== */
+.grid{counter-reset:idx}
+.badge{counter-increment:idx;display:flex;align-items:center;gap:10px;width:auto;height:auto;background:none;border-radius:0;margin-bottom:12px;
+  font:600 .95rem var(--serif);letter-spacing:.1em;color:var(--accent-text)}
+.badge::before{content:counter(idx,decimal-leading-zero)}
+.badge::after{content:"";height:1px;width:34px;background:currentColor;opacity:.5}
+.badge.teal{color:var(--teal);background:none}
+/* ícones do cabeçalho feitos só com CSS */
+.ico-theme{width:16px;height:16px;border-radius:50%;border:2px solid currentColor;background:linear-gradient(90deg,currentColor 50%,transparent 50%);display:block}
+.ico-menu{width:18px;height:2px;background:currentColor;box-shadow:0 -6px 0 currentColor,0 6px 0 currentColor;display:block}
+.ticks li::before{content:"";position:absolute;left:0;top:.85em;width:12px;height:1.5px;background:var(--teal)}

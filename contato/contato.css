@@ -1,0 +1,4 @@
+/* Página: Contato */
+.contact-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.phone{font-family:var(--serif);font-size:1.8rem;color:var(--text)!important;margin:4px 0 6px!important}
+.tips{max-width:640px;margin-top:20px;gap:12px}.tips li{font-size:1rem}

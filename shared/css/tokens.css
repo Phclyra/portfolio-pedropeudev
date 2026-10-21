@@ -1,0 +1,27 @@
+/* Design tokens: cores, tipografia, espaçamento. Altere aqui para mudar a identidade visual.
+   --accent       = fundo de botões/destaques (contraste AA com --accent-ink)
+   --accent-text  = dourado para TEXTO pequeno (mais escuro no modo claro, para não "sumir") */
+:root{
+  --bg:#fbf6ec; --bg2:#f4e9d4; --surface:#ffffff; --text:#1b1a19; --muted:#4f4b44; --line:#e2d5bd;
+  --accent:#96600f; --accent-ink:#ffffff; --accent-text:#7a4a05;
+  --teal:#0b6b64; --teal-soft:rgba(11,107,100,.12); --gold-soft:rgba(150,96,15,.13);
+  --glow1:rgba(224,164,58,.30); --glow2:rgba(20,150,140,.20);
+  --shadow:0 16px 40px rgba(70,45,10,.14);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --radius:20px; --header-h:68px; color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#100f0e; --bg2:#181613; --surface:#1c1a17; --text:#f4efe6; --muted:#b4aea2; --line:#2f2b25;
+    --accent:#d4a657; --accent-ink:#14110c; --accent-text:#e6bf72;
+    --teal:#4fd1c5; --teal-soft:rgba(79,209,197,.12); --gold-soft:rgba(212,166,87,.14);
+    --glow1:rgba(212,166,87,.16); --glow2:rgba(79,209,197,.10); --shadow:0 16px 40px rgba(0,0,0,.5); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#100f0e; --bg2:#181613; --surface:#1c1a17; --text:#f4efe6; --muted:#b4aea2; --line:#2f2b25;
+  --accent:#d4a657; --accent-ink:#14110c; --accent-text:#e6bf72;
+  --teal:#4fd1c5; --teal-soft:rgba(79,209,197,.12); --gold-soft:rgba(212,166,87,.14);
+  --glow1:rgba(212,166,87,.16); --glow2:rgba(79,209,197,.10); --shadow:0 16px 40px rgba(0,0,0,.5); color-scheme:dark;
+}

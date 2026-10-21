@@ -1,0 +1,17 @@
+/* Página: Projetos */
+.projects{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.project{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.shot{position:relative;margin:0;aspect-ratio:1280/582;overflow:hidden;display:grid;place-items:center;color:#fff;font:600 1.8rem var(--serif)}
+.shot.s1{background:linear-gradient(135deg,#7a4a0a,#1b140c)}.shot.s2{background:linear-gradient(135deg,#3f7d78,#1d4440)}
+.shot .frame{position:absolute;z-index:2;top:0;left:0;right:0;height:22px;background:rgba(20,18,15,.78);display:flex;align-items:center;gap:5px;padding:0 10px}
+.shot .frame i{width:8px;height:8px;border-radius:50%;background:#ff5f57}.shot .frame i:nth-child(2){background:#febc2e}.shot .frame i:nth-child(3){background:#28c840}
+.shot img{position:absolute;inset:22px 0 0;width:100%;height:calc(100% - 22px);object-fit:cover;object-position:top;transition:transform .7s}
+.project:hover .shot img{transform:scale(1.05)}
+.shot img.hidden{display:none}
+.pbody{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.pbody p{margin:0;color:var(--muted);font-size:.96rem}
+.pbody .btn{margin-top:auto;align-self:flex-start;padding:10px 22px}
+.cols-3{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.btn.small{padding:9px 18px;min-height:42px}
+.cta-box{text-align:center;padding:clamp(30px,6vw,56px);background:linear-gradient(135deg,var(--gold-soft),var(--teal-soft)),var(--surface)}
+.cta-box .lead{margin-inline:auto}.cta-box .btn-row{justify-content:center}
